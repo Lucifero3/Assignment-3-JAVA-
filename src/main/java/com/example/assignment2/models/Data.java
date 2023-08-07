@@ -1,0 +1,7 @@
+package com.example.assignment2.models;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class Data {
+    public HomeSearch home_search;
+}

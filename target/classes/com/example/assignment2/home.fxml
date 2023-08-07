@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.assignment2.controllers.HomeController">
+   <children>
+      <BorderPane layoutX="208.0" layoutY="52.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <FlowPane alignment="CENTER" columnHalignment="CENTER" prefHeight="51.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label text="Realty in US">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </FlowPane>
+         </top>
+         <center>
+            <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <top>
+                  <FlowPane alignment="CENTER_LEFT" hgap="24.0" prefHeight="43.0" prefWidth="560.0" BorderPane.alignment="CENTER">
+                     <BorderPane.margin>
+                        <Insets left="20.0" right="20.0" />
+                     </BorderPane.margin>
+                     <children>
+                        <Label text="Postal Code:" />
+                        <TextField fx:id="postalCodeField" promptText="Enter postal code" />
+                        <Button fx:id="searchButton" mnemonicParsing="false" onAction="#onSearchClicked" text="Search" />
+                     </children>
+                  </FlowPane>
+               </top>
+               <center>
+                  <TableView fx:id="tableView" prefHeight="216.0" prefWidth="560.0" BorderPane.alignment="CENTER">
+                    <columns>
+                      <TableColumn fx:id="propertyID" prefWidth="75.0" text="Property ID" />
+                      <TableColumn prefWidth="75.0" text="Location">
+                           <columns>
+                              <TableColumn fx:id="lane" prefWidth="75.0" text="Lane" />
+                              <TableColumn fx:id="city" prefWidth="75.0" text="City" />
+                              <TableColumn fx:id="country" prefWidth="75.0" text="Country" />
+                           </columns>
+                        </TableColumn>
+                        <TableColumn prefWidth="140.0" text="Allowed Pets">
+                           <columns>
+                              <TableColumn fx:id="cats" prefWidth="75.0" text="Cats" />
+                              <TableColumn fx:id="dogs" prefWidth="75.0" text="Dogs" />
+                           </columns>
+                        </TableColumn>
+                        <TableColumn fx:id="listedPrice" prefWidth="75.0" text="Listed Price" />
+                        <TableColumn fx:id="estimatedPrice" prefWidth="109.0" text="Estimated Price" />
+                        <TableColumn fx:id="soldPrice" prefWidth="41.0" text="Sold Price" />
+                    </columns>
+                     <BorderPane.margin>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                     </BorderPane.margin>
+                  </TableView>
+               </center>
+            </BorderPane>
+         </center>
+         <bottom>
+            <FlowPane alignment="CENTER_LEFT" hgap="12.0" prefHeight="23.0" prefWidth="560.0" BorderPane.alignment="CENTER">
+               <BorderPane.margin>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </BorderPane.margin>
+               <children>
+                  <Label text="Property found:" />
+                  <Label fx:id="resultCount" text="0" />
+               </children>
+            </FlowPane>
+         </bottom>
+      </BorderPane>
+   </children>
+</AnchorPane>
